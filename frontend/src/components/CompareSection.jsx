@@ -14,7 +14,7 @@ export default function CompareSection() {
 
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  const API_BASE= "https://shubham-t-fine_tuned_model.hf.space"
   const handleAnalyze = async () => {
     setLoading(true);
     setResult(null);
@@ -32,7 +32,7 @@ export default function CompareSection() {
           return;
         }
 
-        response = await fetch("http://localhost:5000/predict", {
+        response = await fetch(`${API_BASE}/predict`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export default function CompareSection() {
         formData.append("file1", file1);
         formData.append("file2", file2);
 
-        response = await fetch("http://localhost:5000/predict-file", {
+        response = await fetch(`${API_BASE}/predict-file`, {
           method: "POST",
           body: formData,
         });
