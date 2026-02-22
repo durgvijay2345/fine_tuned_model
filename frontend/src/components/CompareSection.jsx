@@ -14,7 +14,7 @@ export default function CompareSection() {
 
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
-  const API_BASE= "https://shubham-t-fine_tuned_model.hf.space"
+  const API_BASE= "https://shubham-t-fine-tuned-model.hf.space"
   const handleAnalyze = async () => {
     setLoading(true);
     setResult(null);
